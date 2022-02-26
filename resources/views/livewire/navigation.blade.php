@@ -1,4 +1,10 @@
-<header class="bg-navy-500">
+<style>
+    #navigation-menu {
+        height: calc(100vh - 4rem);
+    }
+
+</style>
+<header class="bg-navy-500 sticky top-0">
     <div class="container flex items-center h-16">
         <a
             class="flex flex-col items-center justify-center px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
@@ -57,8 +63,9 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                                this.closest('form').submit();">
+                            <x-jet-dropdown-link href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                                                                                                                                                                                        this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
@@ -86,4 +93,25 @@
         {{-- dorpdown cart --}}
         @livewire('dropdown-cart')
     </div>
+    {{-- menú navegación --}}
+    <nav id="navigation-menu" class="bg-gray-700 bg-opacity-25 absolute w-full">
+        <div class="container h-full">
+            <div class="relative grid grid-cols-4 h-full">
+                <ul class="bg-white">
+                    @foreach ($categories as $category)
+                        <li class="text-gray-500 hover:bg-ochre-400 hover:text-white">
+                            <a class="py-2 px-4 text-sm flex items-center" href="">
+                                <span class="flex justify-center w-9">
+                                    {!! $category->icon !!}
+                                </span>
+                                {{ $category->name }}
+                            </a>
+                            <div class="absolute bg-red-500 w-3/4 top-0 right-0 h-full"></div>
+                        </li>
+                    @endforeach
+                </ul>
+                <div class="col-span-3 bg-gray-100"></div>
+            </div>
+        </div>
+    </nav>
 </header>
