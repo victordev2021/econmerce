@@ -11,9 +11,10 @@
         <a href="/" class="mx-6">
             <x-jet-application-mark class="block h-9 w-auto" />
         </a>
+        {{-- Buscador --}}
         @livewire('search')
         <!-- Settings Dropdown -->
-        <div class="ml-3 relative">
+        <div class="mx-6 relative">
             @auth
                 <x-jet-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -57,7 +58,7 @@
                             @csrf
 
                             <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                        this.closest('form').submit();">
+                                                                                this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
@@ -82,5 +83,7 @@
                 </x-jet-dropdown>
             @endauth
         </div>
+        {{-- dorpdown cart --}}
+        @livewire('dropdown-cart')
     </div>
 </header>
