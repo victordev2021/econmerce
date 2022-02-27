@@ -1,16 +1,6 @@
-<style>
-    #navigation-menu {
-        height: calc(100vh - 4rem);
-    }
-
-    .navigation-link:hover .navigation-submenu {
-        display: block !important;
-    }
-
-</style>
-<header class="bg-navy-500 sticky top-0">
-    <div class="container flex items-center h-16">
-        <a
+<header class="bg-navy-500 sticky top-0" x-data="dropdown()">
+    <div class="container flex items-center h-16" @click.away="close()">
+        <a @click="show()"
             class="flex flex-col items-center justify-center px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                 <path class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round"
@@ -69,7 +59,7 @@
 
                             <x-jet-dropdown-link href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    this.closest('form').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
@@ -98,7 +88,7 @@
         @livewire('dropdown-cart')
     </div>
     {{-- menú navegación --}}
-    <nav id="navigation-menu" class="bg-gray-700 bg-opacity-25 absolute w-full">
+    <nav id="navigation-menu" class="bg-gray-700 bg-opacity-25 absolute w-full hidden" :class="{ 'hidden': ! open }">
         <div class="container h-full">
             <div class="relative grid grid-cols-4 h-full">
                 <ul class="bg-white">

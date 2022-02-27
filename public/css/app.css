@@ -1455,10 +1455,6 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
 .bg-ochre-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(236 122 51 / var(--tw-bg-opacity));
@@ -1842,6 +1838,12 @@ select {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+}
+#navigation-menu {
+    height: calc(100vh - 4rem);
+}
+.navigation-link:hover .navigation-submenu {
+    display: block !important;
 }
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
