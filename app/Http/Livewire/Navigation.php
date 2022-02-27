@@ -10,6 +10,8 @@ class Navigation extends Component
     public function render()
     {
         $categories = Category::all();
+        // $img = $categories->first()->image;
+        // dd($img);
         return view('livewire.navigation', compact('categories'));
     }
 }

@@ -17,7 +17,7 @@ class CategoryFactory extends Factory
         $path = 'public/storage/categories';
         // $path = Storage::disk('s3')->put('categories');
         return [
-            'image' => 'categories/' . $this->faker->image($path, 640, 480, null, true)
+            'image' => 'categories/' . $this->faker->image($path, 640, 480, null, false)
         ];
     }
 }
