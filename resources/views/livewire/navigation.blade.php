@@ -3,6 +3,10 @@
         height: calc(100vh - 4rem);
     }
 
+    .navigation-link:hover .navigation-submenu {
+        display: block !important;
+    }
+
 </style>
 <header class="bg-navy-500 sticky top-0">
     <div class="container flex items-center h-16">
@@ -65,7 +69,7 @@
 
                             <x-jet-dropdown-link href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                this.closest('form').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
@@ -99,32 +103,21 @@
             <div class="relative grid grid-cols-4 h-full">
                 <ul class="bg-white">
                     @foreach ($categories as $category)
-                        <li class="text-gray-500 hover:bg-ochre-400 hover:text-white">
+                        <li class="navigation-link text-gray-500 hover:bg-ochre-400 hover:text-white">
                             <a class="py-2 px-4 text-sm flex items-center" href="">
                                 <span class="flex justify-center w-9">
                                     {!! $category->icon !!}
                                 </span>
                                 {{ $category->name }}
                             </a>
-                            <div class="absolute bg-red-500 w-3/4 top-0 right-0 h-full hidden"></div>
+                            <div class="navigation-submenu absolute bg-gray-100 w-3/4 top-0 right-0 h-full hidden">
+                                <x-navigation-subcategories :category='$category' />
+                            </div>
                         </li>
                     @endforeach
                 </ul>
                 <div class="col-span-3 bg-gray-100">
-                    <div class="grid grid-cols-4 p-4">
-                        <div>
-                            <p class="text-lg font-bold text-center text-gray-500 mb-3">Subcategorías</p>
-                            <ul>
-                                @foreach ($categories->first()->subcategories as $subcategory)
-                                    <li><a class="text-gray-500 font-semibold inline-block py-1 px4 hover:text-ochre-400"
-                                            href="">{{ $subcategory->name }}</a></li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="col-span-3">
-                            <img src="{{ Storage::url($categories->first()->image) }}" alt="" srcset="">
-                        </div>
-                    </div>
+                    <x-navigation-subcategories :category='$categories->first()' />
                 </div>
             </div>
         </div>
