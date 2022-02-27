@@ -1,12 +1,12 @@
 <header class="bg-navy-500 sticky top-0" x-data="dropdown()">
     <div class="container flex items-center h-16" @click.away="close()">
-        <a @click="show()"
+        <a @click="show()" :class="{'bg-opacity-100 text-ochre-400': open}"
             class="flex flex-col items-center justify-center px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                 <path class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round"
                     stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <span>Categorías</span>
+            <span class="text-sm">Categorías</span>
         </a>
         <a href="/" class="mx-6">
             <x-jet-application-mark class="block h-9 w-auto" />
@@ -59,7 +59,7 @@
 
                             <x-jet-dropdown-link href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.closest('form').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
