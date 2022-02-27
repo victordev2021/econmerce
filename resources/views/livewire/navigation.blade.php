@@ -1,20 +1,22 @@
 <header class="bg-navy-500 sticky top-0" x-data="dropdown()">
-    <div class="container flex items-center h-16" @click.away="close()">
+    <div class="container flex items-center h-16 justify-between md:justify-start" @click.away="close()">
         <a @click="show()" :class="{'bg-opacity-100 text-ochre-400': open}"
-            class="flex flex-col items-center justify-center px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
+            class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                 <path class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round"
                     stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <span class="text-sm">Categorías</span>
+            <span class="text-sm hidden md:block">Categorías</span>
         </a>
         <a href="/" class="mx-6">
             <x-jet-application-mark class="block h-9 w-auto" />
         </a>
         {{-- Buscador --}}
-        @livewire('search')
+        <div class="flex-1 hidden md:block">
+            @livewire('search')
+        </div>
         <!-- Settings Dropdown -->
-        <div class="mx-6 relative">
+        <div class="mx-6 relative hidden md:block">
             @auth
                 <x-jet-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -59,7 +61,7 @@
 
                             <x-jet-dropdown-link href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.closest('form').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
@@ -85,7 +87,9 @@
             @endauth
         </div>
         {{-- dorpdown cart --}}
-        @livewire('dropdown-cart')
+        <div class="hidden md:block">
+            @livewire('dropdown-cart')
+        </div>
     </div>
     {{-- menú navegación --}}
     <nav id="navigation-menu" class="bg-gray-700 bg-opacity-25 absolute w-full hidden" :class="{ 'hidden': ! open }">
