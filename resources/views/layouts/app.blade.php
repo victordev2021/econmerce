@@ -48,7 +48,7 @@
     <script>
         function dropdown(params) {
             return {
-                open: true,
+                open: false,
                 show() {
                     if (this.open) {
                         // cierra
