@@ -1,4 +1,5 @@
 <header class="bg-navy-500 sticky top-0" x-data="dropdown()">
+    {{-- app bar --}}
     <div class="container flex items-center h-16 justify-between md:justify-start" @click.away="close()">
         <a @click="show()" :class="{'bg-opacity-100 text-ochre-400': open}"
             class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
@@ -61,7 +62,7 @@
 
                             <x-jet-dropdown-link href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            this.closest('form').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
@@ -93,7 +94,8 @@
     </div>
     {{-- menú navegación --}}
     <nav id="navigation-menu" class="bg-gray-700 bg-opacity-25 absolute w-full hidden" :class="{ 'hidden': ! open }">
-        <div class="container h-full">
+        {{-- lg menu --}}
+        <div class="container h-full hidden md:block">
             <div class="relative grid grid-cols-4 h-full">
                 <ul class="bg-white">
                     @foreach ($categories as $category)
@@ -114,6 +116,27 @@
                     <x-navigation-subcategories :category='$categories->first()' />
                 </div>
             </div>
+        </div>
+        {{-- responsive mmenú --}}
+        <div class="bg-white h-full overflow-y-auto">
+            <div class="container bg-gray-200 py-2 mb-2">
+                @livewire('search')
+            </div>
+            <ul>
+                @foreach ($categories as $category)
+                    <li class="text-gray-500 hover:bg-ochre-400 hover:text-white">
+                        <a class="py-2 px-4 text-sm flex items-center" href="">
+                            <span class="flex justify-center w-9">
+                                {!! $category->icon !!}
+                            </span>
+                            {{ $category->name }}
+                        </a>
+                        <div class="navigation-submenu absolute bg-gray-100 w-3/4 top-0 right-0 h-full hidden">
+                            <x-navigation-subcategories :category='$category' />
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
         </div>
     </nav>
 </header>
