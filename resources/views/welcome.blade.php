@@ -1,16 +1,21 @@
 <x-app-layout>
+    {{-- SLIDER CATEGORIAS --}}
     <div class="container py-8">
-        <section>
-            <h1 class="text-lg uppercase font-semibold text-gray-700">{{ $categories->first()->name }}</h1>
-            @livewire('category-products', ['category' => $categories->first()])
-        </section>
+        @foreach ($categories as $category)
+            <section class="mb-4">
+                <h1 class="text-lg uppercase font-semibold text-gray-700">{{ $category->name }}</h1>
+                @livewire('category-products', ['category' => $category])
+            </section>
+        @endforeach
     </div>
+
+    {{-- JAVA SCRIPT --}}
     @push('script')
         <script>
-            Livewire.on('glider', function() {
-                new Glider(document.querySelector('.glider'), {
+            Livewire.on('glider', function(id) {
+                new Glider(document.querySelector('.glider-' + id), {
                     slidesToScroll: 2,
-                    slidesToShow: 2.5,
+                    slidesToShow: 2,
                     draggable: true,
                     dots: '.dots',
                     arrows: {
