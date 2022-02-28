@@ -6,7 +6,8 @@
                     <li class="bg-white rounded-lg shadow {{ $loop->last ? '' : 'mr-4' }}">
                         <article>
                             <figure>
-                                <img src="{{ Storage::url($product->images->first()->url) }}" alt="" srcset="">
+                                <img class="h-24 w-32 object-cover object-center"
+                                    src="{{ Storage::url($product->images->first()->url) }}" alt="" srcset="">
                             </figure>
                             <div class="py-4 px-6">
                                 <h1 class="text-lg font-semibold text-gray-600">
