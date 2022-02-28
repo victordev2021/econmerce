@@ -14,11 +14,14 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css"> --}}
 
     @livewireStyles
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script> --}}
+    <script src="{{ asset('vendor/js/glider.min.js') }}"></script>
 </head>
 
 <body class="font-sans antialiased">
@@ -67,6 +70,7 @@
             }
         }
     </script>
+    @stack('script')
 </body>
 
 </html>

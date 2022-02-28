@@ -62,7 +62,7 @@
 
                             <x-jet-dropdown-link href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        this.closest('form').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
@@ -138,6 +138,7 @@
                 @endforeach
             </ul>
             <p class="uppercase text-gray-500 px-6 my-2 font-bold">usuarios</p>
+            @livewire('cart-mobile')
             @auth
                 <a class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-ochre-400 hover:text-white"
                     href="{{ route('profile.show') }}">
@@ -147,7 +148,7 @@
                     Perfil
                 </a>
                 <a onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit()"
+                                                document.getElementById('logout-form').submit()"
                     class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-ochre-400 hover:text-white">
                     <span class="flex justify-center w-9">
                         <i class="fas fa-sign-out-alt"></i>

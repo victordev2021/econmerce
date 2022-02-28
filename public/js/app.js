@@ -5518,11 +5518,14 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // require("./glider.min.js");
 
 
-window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
-alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
+ // import Glide from "@glidejs/glide";
+
+window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"]; // window.Glide = Glide;
+
+alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start(); // Glide.start();
 
 /***/ }),
 
