@@ -9,6 +9,11 @@ class Category extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'slug', 'image', 'icon'];
+    // URL AMIGABLES
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     // *********** RELACIONES ELOQUENT **************
     // relación uno a múchos
     public function subcategories()

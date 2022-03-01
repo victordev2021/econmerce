@@ -62,7 +62,7 @@
 
                             <x-jet-dropdown-link href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    this.closest('form').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
@@ -100,7 +100,8 @@
                 <ul class="bg-white">
                     @foreach ($categories as $category)
                         <li class="navigation-link text-gray-500 hover:bg-ochre-400 hover:text-white">
-                            <a class="py-2 px-4 text-sm flex items-center" href="">
+                            <a class="py-2 px-4 text-sm flex items-center"
+                                href="{{ route('categories.show', $category) }}">
                                 <span class="flex justify-center w-9">
                                     {!! $category->icon !!}
                                 </span>
@@ -125,7 +126,8 @@
             <ul>
                 @foreach ($categories as $category)
                     <li class="text-gray-500 hover:bg-ochre-400 hover:text-white">
-                        <a class="py-2 px-4 text-sm flex items-center" href="">
+                        <a class="py-2 px-4 text-sm flex items-center"
+                            href="{{ route('categories.show', $category) }}">
                             <span class="flex justify-center w-9">
                                 {!! $category->icon !!}
                             </span>
@@ -148,7 +150,7 @@
                     Perfil
                 </a>
                 <a onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit()"
+                                                                document.getElementById('logout-form').submit()"
                     class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-ochre-400 hover:text-white">
                     <span class="flex justify-center w-9">
                         <i class="fas fa-sign-out-alt"></i>

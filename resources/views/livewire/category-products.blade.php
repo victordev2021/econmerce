@@ -3,10 +3,10 @@
         <div class="glider-contain">
             <ul class="glider-{{ $category->id }}">
                 @foreach ($products as $product)
-                    <li class="bg-white rounded-lg shadow {{ $loop->last ? '' : 'mr-4' }}">
+                    <li class="bg-white rounded-lg shadow {{ $loop->last ? '' : 'sm:mr-4' }}">
                         <article>
                             <figure>
-                                <img class="h-24 w-32 object-cover object-center"
+                                <img class="h-56 w-full object-cover object-center"
                                     src="{{ Storage::url($product->images->first()->url) }}" alt="" srcset="">
                             </figure>
                             <div class="py-4 px-6">
