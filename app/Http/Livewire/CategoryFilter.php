@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Builder;
 class CategoryFilter extends Component
 {
     use WithPagination;
+    public $view = "list";
     public $category, $subcategoria, $marca;
     public function render()
     {
