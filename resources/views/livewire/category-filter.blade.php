@@ -4,15 +4,15 @@
         <div class="px-6 py-2 flex justify-between items-center">
             <h1 class="text-gray-600 font-semibold uppercase">{{ $category->name }}</h1>
             <div class="text-gray-600 grid grid-cols-2 border-gray-300 divide-x-2 divide-gray-300">
-                <i wire:click="$set('view','list')"
-                    class="fas fa-th-list p-3 cursor-pointer {{ $view == 'list' ? 'text-ochre-400' : '' }}"></i>
                 <i wire:click="$set('view','grid')"
                     class="fas fa-border-all p-3 cursor-pointer {{ $view == 'grid' ? 'text-ochre-400' : '' }}"></i>
+                <i wire:click="$set('view','list')"
+                    class="fas fa-th-list p-3 cursor-pointer {{ $view == 'list' ? 'text-ochre-400' : '' }}"></i>
             </div>
         </div>
     </div>
     {{-- CONTENT ASIDE --}}
-    <div class="grid grid-cols-5 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         <aside class="text-gray-500">
             {{-- {{ $subcategoria }}
             {{ $marca }} --}}
@@ -36,9 +36,9 @@
             </ul>
             <x-jet-button wire:click='limpiar' class="mt-4">eliminar filtros</x-jet-button>
         </aside>
-        <div class="col-span-4">
+        <div class="md:col-span-2 lg:col-span-4">
             @if ($view == 'grid')
-                <ul class="grid grid-cols-4 gap-4">
+                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     @foreach ($products as $product)
                         <li class="bg-white rounded-lg shadow">
                             <article>
