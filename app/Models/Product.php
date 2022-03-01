@@ -18,7 +18,7 @@ class Product extends Model
         return $this->hasMany(Size::class);
     }
     // relación uno a múchos inversa
-    public function brands()
+    public function brand()
     {
         return $this->belongsTo(Brand::class);
     }
