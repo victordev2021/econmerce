@@ -1,6 +1,6 @@
 <div>
     {{-- ASIDE BAR --}}
-    <div class="bg-white rounded-lg shadow-lg mb-4">
+    <div class="bg-white rounded-lg shadow-lg mb-6">
         <div class="px-6 py-2 flex justify-between items-center">
             <h1 class="text-gray-600 font-semibold uppercase">{{ $category->name }}</h1>
             <div class="text-gray-600 grid grid-cols-2 border-gray-300 divide-x-2 divide-gray-300">
@@ -10,15 +10,29 @@
         </div>
     </div>
     {{-- CONTENT ASIDE --}}
-    <div class="grid grid-cols-5">
+    <div class="grid grid-cols-5 gap-6">
         <aside class="text-gray-500">
+            {{-- {{ $subcategoria }}
+            {{ $marca }} --}}
             <h2 class="uppercase text-base font-semibold text-center mb-2">subcategorías</h2>
-            <ul>
+            <ul class="divide-y divide-gray-300">
                 @foreach ($category->subcategories as $subcategory)
-                    <li class="my-2 text-sm"><a class="capitalize hover:text-ochre-400"
-                            href="">{{ $subcategory->name }}</a></li>
+                    <li class="py-2 text-sm">
+                        <a wire:click="$set('subcategoria','{{ $subcategory->name }}')"
+                            class="capitalize hover:text-ochre-400 cursor-pointer {{ $subcategoria == $subcategory->name ? 'text-ochre-400 font-semibold' : '' }}">{{ $subcategory->name }}</a>
+                    </li>
                 @endforeach
             </ul>
+            <h2 class="uppercase text-base font-semibold text-center mb-2 mt-4">Marcas</h2>
+            <ul class="divide-y divide-gray-300">
+                @foreach ($category->brands as $brand)
+                    <li class="py-2 text-sm">
+                        <a wire:click='$set("marca","{{ $brand->name }}")'
+                            class="capitalize hover:text-ochre-400 cursor-pointer {{ $marca == $brand->name ? 'text-ochre-400 font-semibold' : '' }}">{{ $brand->name }}</a>
+                    </li>
+                @endforeach
+            </ul>
+            <x-jet-button wire:click='limpiar' class="mt-4">eliminar filtros</x-jet-button>
         </aside>
         <div class="col-span-4">
             <ul class="grid grid-cols-4 gap-4">
