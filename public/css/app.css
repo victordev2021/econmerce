@@ -1015,6 +1015,10 @@ select {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -1505,6 +1509,10 @@ select {
 .bg-gray-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+.bg-green-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
 .bg-ochre-400 {
   --tw-bg-opacity: 1;
@@ -2384,6 +2392,10 @@ code.slim {
 .hover\:text-ochre-400:hover {
   --tw-text-opacity: 1;
   color: rgb(236 122 51 / var(--tw-text-opacity));
+}
+.hover\:text-ochre-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(180 102 32 / var(--tw-text-opacity));
 }
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;

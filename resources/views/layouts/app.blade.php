@@ -13,15 +13,23 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    {{-- fontawesome --}}
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css"> --}}
+    {{-- flexslide --}}
+    <link rel="stylesheet" href="{{ asset('vendor/FlexSlider/flexslider.css') }}">
 
     @livewireStyles
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+    {{-- Glider plugin --}}
     {{-- <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script> --}}
     <script src="{{ asset('vendor/js/glider.min.js') }}"></script>
+    {{-- flexslide --}}
+    <script src="{{ asset('vendor/FlexSlider/node_modules/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/FlexSlider/jquery.flexslider-min.js') }}"></script>
+
 </head>
 
 <body class="font-sans antialiased">
