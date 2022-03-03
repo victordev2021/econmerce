@@ -11,7 +11,8 @@
                             </figure>
                             <div class="py-4 px-6">
                                 <h1 class="text-lg font-semibold text-gray-600">
-                                    <a href="">{{ Str::limit($product->name, 20, '...') }}</a>
+                                    <a
+                                        href="{{ route('products.show', $product) }}">{{ Str::limit($product->name, 20, '...') }}</a>
                                 </h1>
                                 <p class="font-bold text-gray-700">Bs {{ $product->price }}</p>
                             </div>

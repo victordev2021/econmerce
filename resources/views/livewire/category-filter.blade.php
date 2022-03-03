@@ -48,7 +48,8 @@
                                 </figure>
                                 <div class="py-4 px-6">
                                     <h1 class="text-lg font-semibold text-gray-600">
-                                        <a href="">{{ Str::limit($product->name, 20, '...') }}</a>
+                                        <a
+                                            href="{{ route('products.show', $product) }}">{{ Str::limit($product->name, 20, '...') }}</a>
                                     </h1>
                                     <p class="font-bold text-gray-700">Bs {{ $product->price }}</p>
                                 </div>
@@ -83,7 +84,8 @@
                                         </div>
                                     </div>
                                     <div class="mt-auto mb-4">
-                                        <x-jet-danger-button>más información</x-jet-danger-button>
+                                        <x-danger-link href="{{ route('products.show', $product) }}">más información
+                                        </x-danger-link>
                                     </div>
                                 </div>
                             </article>

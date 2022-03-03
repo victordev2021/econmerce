@@ -11,6 +11,10 @@ class Product extends Model
     protected $guarded = ['id', 'created_at', 'updated_at'];
     const BORRADOR = 1;
     const PUBLICADO = 2;
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     // *********** RELACIONES ELOQUENT **************
     // relación uno a múchos
     public function sizes()
