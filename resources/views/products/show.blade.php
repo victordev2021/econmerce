@@ -32,7 +32,7 @@
                         </span>
                         <div class="ml-4">
                             <p class="text-green-600 font-semibold text-lg">Se hacen envios a toda bolivia.</p>
-                            <p>Recibelo el {{ now()->addDay(7)->format('l j F') }}</p>
+                            <p>Recibelo el {{ Date::now()->addDay(7)->locale('es')->format('l j F') }}</p>
                         </div>
                     </div>
                 </div>
