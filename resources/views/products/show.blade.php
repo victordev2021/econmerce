@@ -8,8 +8,10 @@
                     <ul class="slides">
                         @foreach ($product->images as $image)
                             <li data-thumb="{{ Storage::url($image->url) }}">
-                                <img src="{{ Storage::url($image->url) }}" />
+                                {{-- <img src="{{ Storage::url($image->url) }}" /> --}}
+                                <img src="{{ $image->url }}" />
                             </li>
+                            <h1>hi world!!!</h1>
                         @endforeach
                     </ul>
                 </div>
@@ -36,6 +38,14 @@
                         </div>
                     </div>
                 </div>
+                @if ($product->subcategory->size)
+                    @livewire('add-cart-item-size', ['product' => $product])
+                @elseif ($product->subcategory->color)
+                    @livewire('add-cart-item-color', ['product' => $product])
+                @else
+                    {{-- @livewire('add-cart-item-color', ['product' => $product]) --}}
+                    @livewire('add-cart-item', ['product' => $product])
+                @endif
             </div>
         </div>
     </div>

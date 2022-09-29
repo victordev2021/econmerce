@@ -15,7 +15,8 @@ class ImageFactory extends Factory
     {
         $path = 'public/storage/products';
         return [
-            'url' => 'products/' . $this->faker->image($path, 640, 488, null, false)
+            // 'url' => 'products/' . $this->faker->image($path, 640, 488, null, false)
+            'url' => $this->faker->imageUrl(640, 488)
         ];
     }
 }

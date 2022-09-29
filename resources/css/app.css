@@ -1,6 +1,15 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+/* @import "tailwind.css"; */
 @import "glider.css";
 @import "container.css";
 @import "nav.css";
+@import "form.css";
+
+/* .bg-orange-600 {
+    background-color: salmon;
+}
+.bg-blue-600 {
+    background-color: blue;
+} */

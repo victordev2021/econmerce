@@ -29,6 +29,8 @@
     {{-- flexslide --}}
     <script src="{{ asset('vendor/FlexSlider/node_modules/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/FlexSlider/jquery.flexslider-min.js') }}"></script>
+    {{-- tailwind --}}
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 
 </head>
 

@@ -7,7 +7,9 @@
                         <article>
                             <figure>
                                 <img class="h-56 w-full object-cover object-center"
-                                    src="{{ Storage::url($product->images->first()->url) }}" alt="" srcset="">
+                                    src="{{ $product->images->first()->url }}" alt="" srcset="">
+                                {{-- <img class="h-56 w-full object-cover object-center"
+                                    src="{{ Storage::url($product->images->first()->url) }}" alt="" srcset=""> --}}
                             </figure>
                             <div class="py-4 px-6">
                                 <h1 class="text-lg font-semibold text-gray-600">
